@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>EASHL Playoffs Countdown</title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="container">
+      <!-- <img class="AM" src="AM.png"> -->
+      <div id="head">PLAYOFFS OPEN IN</div>
+      <div id="counter"></div>
+      <div class="box title">DAYS</div>
+      <div class="box title">HOURS</div> 
+      <div class="box title">MINUTES</div>
+      <div class="box title">SECONDS</div>
+  </div>
+<script>
+    var deadline = new Date("Apr 19, 2020 14:53:00");
+    var isPlayoffs = false;
+
+    var x = setInterval(function() { 
+
+      var deadlineTime = deadline.getTime(); 
+
+      var now = new Date().getTime(); 
+      var timeleft = deadlineTime - now; 
+      var days = Math.floor(timeleft / (1000 * 60 * 60 * 24)); 
+      var hours = Math.floor((timeleft %(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
+      var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60)); 
+      var seconds = Math.floor((timeleft % (1000 * 60)) / 1000); 
+
+      if(isPlayoffs) {
+        document.getElementById("head").innerHTML = "PLAYOFFS CLOSE IN"; 
+      } else {
+        document.getElementById("head").innerHTML = "PLAYOFFS OPEN IN"; 
+      }
+      document.getElementById("counter").innerHTML = '<div class="box time">' + days + '</div><div class="box time">' 
+      + hours + '</div><div class="box time">' + minutes + '</div><div class="box time">' + seconds + '</div>'; 
+
+      if (timeleft < 0) { 
+        if(isPlayoffs) {
+          //deadline.setDate(deadline.getDate() +  30);
+          deadline.setSeconds(deadline.getSeconds() + 60);
+          isPlayoffs = false;
+        } else {
+          //deadline.setDate(deadline.getDate() +  3);
+          deadline.setSeconds(deadline.getSeconds() + 20);
+          isPlayoffs = true;
+        }
+      } 
+    }, 1000); 
+</script> 
+</body>
+
+</html>
