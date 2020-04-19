@@ -1,0 +1,46 @@
+html {
+   /* background-image: linear-gradient(to right, #8825ff, #c911ff); */
+    background-image: url(Arena2.jpg);
+    background-size: cover;
+    position: relative;
+}
+body {
+    font-family: montserrat, sans-serif;
+    color: white;
+}
+
+#container {
+    width: 500px;
+    position: fixed;
+    top: 60%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0);
+    padding: 30px 20px;
+   
+}
+
+.time {
+    font-size: 40px;
+    line-height: 90px;
+    font-weight: 800;
+}
+
+.box {
+    float:left;
+    margin: 0 10px;
+    width: 100px;
+    text-align: center;
+}
+
+.title {
+    letter-spacing: 1px;
+}
+
+#head {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
