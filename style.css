@@ -102,17 +102,17 @@ html, body {
     }
 
     .countdown {
-        font-size: 40px;
+        font-size: 30px;
         flex-direction: column;
     }
 
     .countdown div {
-        margin: 10px;
+        margin: 6px;
         width: 150px;
-        border-radius: 110px;
+        border-radius: 100px;
         background: black;
-        width: 110px;
-        height: 110px;
+        width: 100px;
+        height: 100px;
         padding-top: 9px;
     }
 
@@ -129,18 +129,18 @@ html, body {
     }
 
     .countdown {
-        font-size: 40px;
+        font-size: 22px;
         flex-direction: column;
     }
 
     .countdown div {
         margin: 5px;
         width: 150px;
-        border-radius: 100px;
+        border-radius: 85px;
         background: black;
-        width: 100px;
-        height: 100px;
-        padding-top: 5px;
+        width: 85px;
+        height: 85px;
+        padding-top: 10px;
     }
 
 }
@@ -175,8 +175,8 @@ html, body {
 /* Iphone X */
 @media(width: 375px) and (height: 812px) {
     .landing img {
-        width: 50%;
-        padding-bottom: 50px;
+        width: 40%;
+        padding-bottom: 20px;
     }
 
     .landing p {
@@ -184,17 +184,17 @@ html, body {
     }
 
     .countdown {
-        font-size: 40px;
+        font-size: 35px;
         flex-direction: column;
     }
 
     .countdown div {
         margin: 10px;
         width: 150px;
-        border-radius: 110px;
+        border-radius: 100px;
         background: black;
-        width: 110px;
-        height: 110px;
+        width: 100px;
+        height: 100px;
         padding-top: 10px;
     }
 
