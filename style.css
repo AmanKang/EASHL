@@ -94,7 +94,7 @@ html, body {
 /* Iphone X */
 @media(max-width: 415px) {
     .landing img {
-        width: 40%;
+        width: 30%;
     }
 
     .landing p {
@@ -121,7 +121,7 @@ html, body {
 /* Iphone X */
 @media(max-width: 375px) {
     .landing img {
-        width: 40%;
+        width: 30%;
     }
 
     .landing p {
@@ -148,7 +148,7 @@ html, body {
 /* Iphone X */
 @media(max-width: 320px) {
     .landing img {
-        width: 30%;
+        width: 20%;
     }
 
     .landing p {
@@ -175,7 +175,7 @@ html, body {
 /* Iphone X */
 @media(width: 375px) and (height: 812px) {
     .landing img {
-        width: 40%;
+        width: 30%;
         padding-bottom: 20px;
     }
 
