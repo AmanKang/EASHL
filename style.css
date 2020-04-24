@@ -1,46 +1,214 @@
-html {
-   /* background-image: linear-gradient(to right, #8825ff, #c911ff); */
-    background-image: url(Arena2.jpg);
-    background-size: cover;
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    font-family: Muli, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+    background: #333;
+    overflow: hidden;
+}
+
+.landing {
     position: relative;
-}
-body {
-    font-family: montserrat, sans-serif;
-    color: white;
-}
-
-#container {
-    width: 500px;
-    position: fixed;
-    top: 60%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0);
-    padding: 30px 20px;
-   
+    background-image: url('team.jpg');
+    background-size: cover;
+    background-position: top;
+    height: 100vh;
 }
 
-.time {
-    font-size: 40px;
-    line-height: 90px;
-    font-weight: 800;
-}
-
-.box {
-    float:left;
-    margin: 0 10px;
-    width: 100px;
-    text-align: center;
-}
-
-.title {
-    letter-spacing: 1px;
-}
-
-#head {
+.landing-inner {
+    position: absolute;
+    top: 0;
+    left:0;
     width: 100%;
+    height: 100%;
     text-align: center;
+    padding-top: 20px;
+    background: rgba(39, 5, 5, 0.7);
+
+}
+
+.landing-inner img {
+    width: 250px;
+}
+
+
+.landing p {
     font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 10px;
+    
+}
+
+.countdown {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.countdown div {
+    margin: 20px;
+    border-radius: 150px;
+    opacity: 0.8;
+    background: black;
+    width: 150px;
+    height: 150px;
+    padding-top: 20px;
+}
+
+.countdown span {
+    display: block;
+    font-size: 15px;
+}
+
+
+
+/* Iphone X */
+@media(max-width: 650px) {
+    .landing img {
+        width: 50%;
+    }
+
+    .landing p {
+        display: none;
+    }
+
+    .countdown {
+        font-size: 30px;
+        flex-direction: column;
+    }
+
+    .countdown div {
+        width: 150px;
+        border-radius: 100px;
+        background: black;
+        width: 100px;
+        height: 100px;
+        padding-top: 9px;
+    }
+
+}
+
+/* Iphone X */
+@media(max-width: 415px) {
+    .landing img {
+        width: 40%;
+    }
+
+    .landing p {
+        display: none;
+    }
+
+    .countdown {
+        font-size: 40px;
+        flex-direction: column;
+    }
+
+    .countdown div {
+        margin: 10px;
+        width: 150px;
+        border-radius: 110px;
+        background: black;
+        width: 110px;
+        height: 110px;
+        padding-top: 9px;
+    }
+
+}
+
+/* Iphone X */
+@media(max-width: 375px) {
+    .landing img {
+        width: 40%;
+    }
+
+    .landing p {
+        display: none;
+    }
+
+    .countdown {
+        font-size: 40px;
+        flex-direction: column;
+    }
+
+    .countdown div {
+        margin: 5px;
+        width: 150px;
+        border-radius: 100px;
+        background: black;
+        width: 100px;
+        height: 100px;
+        padding-top: 5px;
+    }
+
+}
+
+/* Iphone X */
+@media(max-width: 320px) {
+    .landing img {
+        width: 30%;
+    }
+
+    .landing p {
+        display: none;
+    }
+
+    .countdown {
+        font-size: 18px;
+        flex-direction: column;
+    }
+
+    .countdown div {
+        margin: 5px;
+        width: 150px;
+        border-radius: 80px;
+        background: black;
+        width: 80px;
+        height: 80px;
+        padding-top: 9px;
+    }
+
+}
+
+/* Iphone X */
+@media(width: 375px) and (height: 812px) {
+    .landing img {
+        width: 50%;
+        padding-bottom: 50px;
+    }
+
+    .landing p {
+        display: none;
+    }
+
+    .countdown {
+        font-size: 40px;
+        flex-direction: column;
+    }
+
+    .countdown div {
+        margin: 10px;
+        width: 150px;
+        border-radius: 110px;
+        background: black;
+        width: 110px;
+        height: 110px;
+        padding-top: 10px;
+    }
+
+}
+
+
+@media(max-height: 600px) {
+    .landing img {
+        width: 30%;
+        padding-bottom: 30px;
+    }
+
+    .landing p {
+        display: none;
+    }
+
 }

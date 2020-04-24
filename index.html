@@ -3,25 +3,35 @@
 <head>
   <meta charset="utf-8">
   <title>EASHL Playoffs Countdown</title>
-  <meta name="author" content="">
-  <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="container">
-      <!-- <img class="AM" src="AM.png"> -->
-      <div id="head">PLAYOFFS OPEN IN</div>
-      <div id="counter"></div>
-      <div class="box title">DAYS</div>
-      <div class="box title">HOURS</div> 
-      <div class="box title">MINUTES</div>
-      <div class="box title">SECONDS</div>
-  </div>
+  <section class="landing">
+    <div class="landing-inner">
+        <img src="eashl-logo.png" alt="EASHL-Logo" class="eashl-logo">
+        <p class='status'>Playoffs open in</p>
+        <div class="countdown">
+          <div class="days"></div>
+          <div class="hours"></div>
+          <div class="minutes"></div>
+          <div class="seconds"></div>
+        </div>
+    </div>
+</section>
 <script>
-    var deadline = new Date("Apr 30, 2020 14:53:00");
+    var countdown = document.querySelector('.countdown');
+    const status = document.querySelector('.status');
+    const borders = document.querySelectorAll('.countdown div');
+    var deadline = new Date("Apr 30, 2020 20:00:00");
     var isPlayoffs = false;
+
+    var daysDiv = document.querySelector('.days');
+    var hoursDiv = document.querySelector('.hours');
+    var minutesDiv = document.querySelector('.minutes');
+    var secondsDiv = document.querySelector('.seconds');
 
     var x = setInterval(function() { 
 
@@ -30,28 +40,35 @@
       var now = new Date().getTime(); 
       var timeleft = deadlineTime - now; 
       var days = Math.floor(timeleft / (1000 * 60 * 60 * 24)); 
-      var hours = Math.floor((timeleft %(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
+      var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
       var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60)); 
       var seconds = Math.floor((timeleft % (1000 * 60)) / 1000); 
 
       if(isPlayoffs) {
-        document.getElementById("head").innerHTML = "PLAYOFFS CLOSE IN"; 
+        status.innerText = "Playoffs close in"; 
+        borders.forEach(element => element.style.border = '5px solid green');
       } else {
-        document.getElementById("head").innerHTML = "PLAYOFFS OPEN IN"; 
+        status.innerText = "Playoffs open in"; 
+        borders.forEach(element => element.style.border = '5px solid red');
       }
-      document.getElementById("counter").innerHTML = '<div class="box time">' + days + '</div><div class="box time">' 
-      + hours + '</div><div class="box time">' + minutes + '</div><div class="box time">' + seconds + '</div>'; 
+
+      daysDiv.innerHTML = `${days}<span>Days</span>`;
+      hoursDiv.innerHTML = `${hours}<span>Hours</span>`;
+      minutesDiv.innerHTML = `${minutes}<span>Minutes</span>`;
+      secondsDiv.innerHTML = `${seconds}<span>Seconds</span>`;
 
       if (timeleft < 0) { 
         if(isPlayoffs) {
-          //deadline.setDate(deadline.getDate() +  30);
-          deadline.setSeconds(deadline.getSeconds() + 60);
+          deadline.setDate(deadline.getDate() +  30);
+          //deadline.setSeconds(deadline.getSeconds() + 10);
           isPlayoffs = false;
+
         } else {
-          //deadline.setDate(deadline.getDate() +  3);
-          deadline.setSeconds(deadline.getSeconds() + 20);
+          deadline.setDate(deadline.getDate() +  3);
+          //deadline.setSeconds(deadline.getSeconds() + 5);
           isPlayoffs = true;
-        }
+
+        } 
       } 
     }, 1000); 
 </script> 
